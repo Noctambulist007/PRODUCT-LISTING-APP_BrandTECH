@@ -23,7 +23,7 @@ class Productify extends StatelessWidget {
             darkTheme: AppTheme.dark,
             themeMode: ThemeMode.system,
             debugShowCheckedModeBanner: false,
-            initialRoute: Routes.splash,
+            initialRoute: Routes.home,
             onGenerateRoute: Routes.generateRoutes,
 
             builder: (context, child) {
