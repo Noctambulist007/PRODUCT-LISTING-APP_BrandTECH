@@ -1,229 +1,314 @@
-# Productify — Clean Architecture Flutter App
+<div align="center">
 
-[![Flutter Version](https://img.shields.io/badge/Flutter-%E2%89%A53.11.1-blue.svg?logo=flutter&logoColor=white)](https://flutter.dev)
-[![State Management](https://img.shields.io/badge/State%20Management-Riverpod%20v3-red.svg)](https://riverpod.dev)
-[![Local Storage](https://img.shields.io/badge/Local%20Storage-Hive-orange.svg)](https://docs.hivedb.dev/)
-[![Arch](https://img.shields.io/badge/Architecture-Clean%20Architecture-green.svg)](#architectural-philosophy)
-[![Tests Passed](https://img.shields.io/badge/Tests-13%20%2F%2013%20Passed-brightgreen.svg)](#testing-pipeline)
+<img src="assets/github_readme/splash_screen.jpg" width="120" style="border-radius: 24px;" />
 
-> [!IMPORTANT]
-> **Production Android Build Available**
-> Download and install the compiled release APK to test all core and premium features directly on an Android device:
-> [Download Productify v1.0.0 APK](https://github.com/Noctambulist007/Productify/releases/download/Productify/Productify_v1.0.0.apk)
+# ✦ Productify
 
-A premium, state-of-the-art Flutter mobile application designed for the **BrandTECH Technical Task**. Productify showcases an interactive product catalog integrated with local persistence databases, premium micro-animations, theme flexibility, and robust clean-architecture standards.
+### *A premium Flutter product catalog — built for the BrandTECH Mobile App Developer Task*
 
----
+<br/>
 
-## Visual Showcases
+[![Flutter](https://img.shields.io/badge/Flutter-%E2%89%A53.11.1-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-3.x-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
+[![Riverpod](https://img.shields.io/badge/Riverpod-v3-E53935?style=for-the-badge)](https://riverpod.dev)
+[![Hive](https://img.shields.io/badge/Hive-Local%20DB-FF7043?style=for-the-badge)](https://docs.hivedb.dev)
+[![Architecture](https://img.shields.io/badge/Clean%20Architecture-✓-43A047?style=for-the-badge)](#architecture)
+[![Tests](https://img.shields.io/badge/Tests-13%20%2F%2013%20Passed-brightgreen?style=for-the-badge)](#testing)
+[![APK](https://img.shields.io/badge/⬇%20Download%20APK-v1.0.0-7E57C2?style=for-the-badge)](https://github.com/Noctambulist007/Productify/releases/download/Productify/Productify_v1.0.0.apk)
 
-### Walkthrough Demonstration
+<br/>
 
-An interactive, high-fidelity walkthrough demonstration of all user onboarding flows, search systems, filter queries, dark/light modes, related carousels, and local databases:
-[View Productify Walkthrough Video](assets/github_readme/productify_full_app_walkthrough.mp4)
+> **Productify** is a state-of-the-art Flutter application that goes far beyond a basic product listing app.
+> It delivers a polished, production-grade experience with immersive onboarding, dark/light theming,
+> advanced filtering, full-screen image zoom, incremental pagination, and a fully tested clean architecture.
 
-### Screen Captures
+<br/>
 
-#### Splash and Onboarding
+[**Download APK**](https://github.com/Noctambulist007/Productify/releases/download/Productify/Productify_v1.0.0.apk) &nbsp;·&nbsp;
+[**Watch Demo**](#demo) &nbsp;·&nbsp;
+[**Screenshots**](#screenshots) &nbsp;·&nbsp;
+[**Quick Start**](#quick-start) &nbsp;·&nbsp;
+[**Architecture**](#architecture)
 
-| Splash Screen | Onboarding 1 | Onboarding 2 |
-| :---: | :---: | :---: |
-| <img src="assets/github_readme/splash_screen.jpg" width="220" /> | <img src="assets/github_readme/onboarding_screen_1.jpg" width="220" /> | <img src="assets/github_readme/onboarding_screen_2.jpg" width="220" /> |
-
-| Onboarding 3 | Onboarding 4 |
-| :---: | :---: |
-| <img src="assets/github_readme/onboarding_screen_3.jpg" width="220" /> | <img src="assets/github_readme/onboarding_screen_4.jpg" width="220" /> |
-
-#### Home Feed and Advanced Search/Filter
-
-| Home Feed (Light Mode) | Home Feed (Dark Mode) | Shimmer Loading State |
-| :---: | :---: | :---: |
-| <img src="assets/github_readme/home_screen_light.jpg" width="220" /> | <img src="assets/github_readme/home_screen_dark.jpg" width="220" /> | <img src="assets/github_readme/shimmer_product_loading_view_home_screen.jpg" width="220" /> |
-
-| Active Search Query | Advanced Sort and Filter Sheet |
-| :---: | :---: |
-| <img src="assets/github_readme/search_screen.jpg" width="220" /> | <img src="assets/github_readme/sort_modal_sheet.jpg" width="220" /> |
-
-#### Product Specifications and Related Sections
-
-| Product Details (Light Mode) | Specifications View | Product Details (Dark Mode) |
-| :---: | :---: | :---: |
-| <img src="assets/github_readme/product_detail_screen_light_1.jpg" width="220" /> | <img src="assets/github_readme/product_detail_screen_light_2.jpg" width="220" /> | <img src="assets/github_readme/product_detail_screen_dark_1.jpg" width="220" /> |
-
-#### Favorites and Offline Persistence
-
-| Favorites List (Light Mode) | Favorites List (Dark Mode) |
-| :---: | :---: |
-| <img src="assets/github_readme/favorite_screen_light.jpg" width="220" /> | <img src="assets/github_readme/favorite_screen_dark.jpg" width="220" /> |
+</div>
 
 ---
 
-## Features Checklist & Beyond (Core vs. Premium)
+<br/>
 
-This application satisfies all **BrandTECH Technical Task** requirements and goes above and beyond with premium additions:
+## Demo <a name="demo"></a>
 
-### Technical Task Requirements (Core)
-- [x] **Home Screen**: Fetches and displays products dynamically from `https://fakestoreapi.com/products`.
-- [x] **Product Cards**: Exquisitely laid out cards showcasing `image`, `name`, `price`, and interactive rating chips.
-- [x] **Search / Filtering**: Built-in real-time query filter on the product feed.
-- [x] **State Feedback**: Adaptive shimmer loading indicators and intuitive offline/error widgets.
-- [x] **Product Detail Screen**: Full product display (image, detailed descriptions, category info, price, and dynamic star rating).
-- [x] **Favorites Feature**: Marked favorites persist locally (remains offline-safe).
-- [x] **Favorites Screen**: Dedicated page to list, view, and instantly manage favorited items.
-- [x] **UX Excellence**: Modern, responsive UI with fluid transitions.
+<div align="center">
 
----
+<!-- Video walkthrough — click the thumbnail below to watch the full demo -->
 
-### Premium Extras & Bonus Additions
-*   **Immersive Splash Screen**: Clean visual transition on startup.
-*   **Interactive 4-Screen Onboarding**: A stunning page slider using smooth typography, graphics, and indicator animations.
-*   **Seamless Dark & Light Themes**: Dynamic app-wide dark mode support with tailored HSL primary assets.
-*   **High-Performance Image Caching**: Network images are locally cached (`cached_network_image`) for zero internet lag.
-*   **Full-Screen Zoomable Gallery**: Tap any product image to zoom, rotate, and interact in full resolution.
-*   **Expandable Descriptions**: Long details are cleanly collapsed with a tap-to-expand option.
-*   **Pull-to-Refresh Support**: Refresh feeds on the go.
-*   **Incremental Pagination and Lazy Loading**: Optimised product feed pagination that maintains a fixed page 1 and dynamically scales page limits in steps of 10 up to the API ceiling of 20 items. This incorporates premium full-card shimmer load-more placeholders and reliable end-of-list visual cues when all items have successfully loaded.
-*   **Related Products Carousel**: Suggests contextual matching products on details pages.
-*   **5-Way Advanced Filter Engine**: Filter by search text, sort by categories, prices, ratings, and count fields.
-*   **Robust Unit Test Suite**: Completely tested using custom Repository Fakes and Riverpod Container controllers.
+[![Watch Full App Walkthrough](assets/github_readme/home_screen_dark.jpg)](assets/github_readme/productify_full_app_walkthrough.mp4)
+
+> **[▶ Watch Full App Walkthrough](assets/github_readme/productify_full_app_walkthrough.mp4)** — covers all screens, dark/light mode, filtering, favorites, and animations.
+
+</div>
 
 ---
 
-## Architectural Philosophy
+<br/>
 
-The project is structured under **Clean Architecture** to ensure clean separation of concerns, testability, and fast iteration:
+## Screenshots <a name="screenshots"></a>
+
+### Splash & Onboarding
+
+<div align="center">
+
+| Splash | Onboarding 1 | Onboarding 2 | Onboarding 3 | Onboarding 4 |
+|:---:|:---:|:---:|:---:|:---:|
+| <img src="assets/github_readme/splash_screen.jpg" width="160"/> | <img src="assets/github_readme/onboarding_screen_1.jpg" width="160"/> | <img src="assets/github_readme/onboarding_screen_2.jpg" width="160"/> | <img src="assets/github_readme/onboarding_screen_3.jpg" width="160"/> | <img src="assets/github_readme/onboarding_screen_4.jpg" width="160"/> |
+
+</div>
+
+---
+
+### Home Screen
+
+<div align="center">
+
+| Dark Mode | Light Mode | Shimmer Loading | Search |
+|:---:|:---:|:---:|:---:|
+| <img src="assets/github_readme/home_screen_dark.jpg" width="200"/> | <img src="assets/github_readme/home_screen_light.jpg" width="200"/> | <img src="assets/github_readme/shimmer_product_loading_view_home_screen.jpg" width="200"/> | <img src="assets/github_readme/search_screen.jpg" width="200"/> |
+
+</div>
+
+---
+
+### Product Detail
+
+<div align="center">
+
+**Dark Mode**
+
+| Detail View 1 | Detail View 2 |
+|:---:|:---:|
+| <img src="assets/github_readme/product_detail_screen_dark_1.jpg" width="260"/> | <img src="assets/github_readme/product_detail_screen_dark_2.jpg" width="260"/> |
+
+**Light Mode**
+
+| Detail View 1 | Detail View 2 |
+|:---:|:---:|
+| <img src="assets/github_readme/product_detail_screen_light_1.jpg" width="260"/> | <img src="assets/github_readme/product_detail_screen_light_2.jpg" width="260"/> |
+
+</div>
+
+---
+
+### Favorites & Filtering
+
+<div align="center">
+
+| Favorites (Dark) | Favorites (Light) | Sort & Filter Sheet |
+|:---:|:---:|:---:|
+| <img src="assets/github_readme/favorite_screen_dark.jpg" width="210"/> | <img src="assets/github_readme/favorite_screen_light.jpg" width="210"/> | <img src="assets/github_readme/sort_modal_sheet.jpg" width="210"/> |
+
+</div>
+
+---
+
+<br/>
+
+## Features <a name="features"></a>
+
+### Core Task Requirements
+
+| # | Feature 
+|---|---------
+| 1 | Fetch & display products from `fakestoreapi.com/products` 
+| 2 | Product cards with image, name, price & rating 
+| 3 | Real-time search / filter bar 
+| 4 | Shimmer loading indicators 
+| 5 | Error & offline state handling 
+| 6 | Product detail screen (image, title, description, price, category, rating) 
+| 7 | Mark / unmark favorites 
+| 8 | Local favorites persistence with **Hive** 
+| 9 | Dedicated Favorites screen
+| 10 | Clean, responsive UI with smooth navigation 
+
+### Bonus / Premium Extras
+
+| Feature | Details |
+|---------|---------|
+| **State Management** | Riverpod v3 — reactive, scalable, fully provider-cached |
+| **Dark / Light Mode** | System-aware dynamic theme with tailored HSL assets |
+| **Animations** | Hero transitions, page slide animations, shimmer effects |
+| **Immersive Splash** | Native splash screen with custom branding |
+| **4-Screen Onboarding** | Animated carousel with typography, graphics & skip logic |
+| **Image Caching** | `cached_network_image` — zero-lag offline image serving |
+| **Full-Screen Zoom Gallery** | Pinch-to-zoom, rotate & pan any product image |
+| **Expandable Descriptions** | Tap-to-expand collapsed product descriptions |
+| **Pull-to-Refresh** | Swipe down to reload product feed |
+| **Incremental Pagination** | Lazy-loading in steps of 10, shimmer placeholders, end-of-list indicators |
+| **Related Products Carousel** | Contextual product suggestions on detail pages |
+| **5-Way Advanced Filter Engine** | Filter by text · sort by category · price · rating · count |
+| **Unit Test Suite** | 13/13 tests using Fake Repositories & Riverpod Container |
+
+---
+
+<br/>
+
+## Architecture <a name="architecture"></a>
+
+Productify is built on **Clean Architecture** principles — strict separation of concerns across three layers: **Data**, **Domain**, and **Presentation**.
 
 ```
 lib/
-├── data/                                 # Data Layer (Network Clients & DB storage)
+├── data/                          # ── Data Layer ──────────────────────────────
 │   ├── datasource/
-│   │   ├── local/source/                 # Local Storage (Hive database favorites)
-│   │   └── remote/                       # Remote Client (Dio endpoint clients)
-│   ├── mapper/                           # Response Model ➔ Domain Entity Mappers
-│   └── repository/                       # Implementation of Domain Repositories
+│   │   ├── local/source/          # Hive local database (favorites persistence)
+│   │   └── remote/                # Dio HTTP clients (fakestoreapi.com)
+│   ├── mapper/                    # Response Models ➜ Domain Entity mappers
+│   └── repository/                # Concrete implementations of domain contracts
 │
-├── domain/                               # Domain Layer (Strictly Dart, Zero Framework dependence)
-│   ├── model/                            # Data Entities (Core Business Objects)
-│   ├── repository/                       # Contract Interfaces
-│   └── usecase/                          # Single-Responsibility Feature Operations
+├── domain/                        # ── Domain Layer (pure Dart, zero Flutter) ──
+│   ├── model/                     # Core business entities
+│   ├── repository/                # Abstract repository interfaces
+│   └── usecase/                   # Single-responsibility use cases
 │
-├── presentation/                         # Presentation Layer (UI & State Controllers)
-│   ├── common/widget/                    # Reusable Global UI components
-│   ├── dialog/                           # Custom Modals and overlays
-│   ├── screen/                           # Application Pages (Home, Onboarding, Detail, Splash)
-│   └── theme/                            # Color Themes, Styles & Extensions
+├── presentation/                  # ── Presentation Layer ───────────────────────
+│   ├── common/widget/             # Reusable global UI components
+│   ├── dialog/                    # Custom modals & overlays
+│   ├── screen/                    # App screens (Home, Detail, Favorites, Onboarding, Splash)
+│   └── theme/                     # Color themes, text styles & extensions
 │
-├── di/                                   # Modular Dependency Injection (GetIt)
-├── main.dart                             # Main Entry Point
-└── productify.dart                       # Core Material App Initialization
+├── di/                            # Modular Dependency Injection (GetIt)
+├── main.dart
+└── productify.dart                # MaterialApp initialization
 ```
 
 ---
 
-## Core Libraries & Plugins Used
+<br/>
 
-### Production Dependencies
+## Libraries Used <a name="libraries"></a>
 
-| Dependency | Version | Purpose |
-| :--- | :--- | :--- |
-| **`flutter_riverpod`** | `^3.3.1` | Advanced reactive state management with dependency caching |
-| **`hive`** | `^2.2.3` | Lightweight and fast key-value database written in pure Dart |
-| **`hive_flutter`** | `^1.1.0` | Hive extension for Flutter, providing easy integration with Box listeners |
-| **`dio`** | `^5.7.0` | Secure and feature-rich network HTTP client with interceptors |
-| **`awesome_dio_interceptor`** | `^1.3.0` | Developer-friendly terminal HTTP request and response logging |
-| **`cached_network_image`**| `^3.4.1` | Multi-tiered offline image caching and placeholder loading shimmers |
-| **`get_it`** | `^9.2.1` | Dependency injection service locator for decoupled architectures |
-| **`shimmer`** | `^3.0.0` | Premium loading effect indicators for grid and list shimmers |
-| **`flutter_screenutil`** | `^5.9.3` | Professional layout adaptation for responsive screen scaling |
-| **`flutter_carousel_intro`** | `^1.0.13` | Highly interactive onboarding introduction slide carousel |
-| **`shared_preferences`** | `^2.3.5` | Key-value store for simple settings and local variables |
-| **`freezed_annotation`** | `^3.1.0` | Declarative definitions for code-generated immutable classes |
-| **`json_annotation`** | `^4.9.0` | Direct configuration rules for serializing class models |
-| **`intl`** | `^0.20.2` | Advanced text internationalization and currency formatting helpers |
-| **`timezone`** | `^0.11.0` | Multi-zone time translation and local scheduling helpers |
-| **`zentoast`** | `^0.2.2` | Clean floating notification snackbars and visual feedback |
-| **`cupertino_icons`** | `^1.0.8` | Standard iOS visual graphic icon assets |
-| **`flutter_launcher_icons`** | `^0.14.4` | Built-in CLI tool to easily rebuild Android/iOS app launcher icons |
-| **`icons_launcher`** | `^3.0.3` | Automated asset launcher icon builder helper |
-| **`flutter_native_splash`** | `^2.3.1` | Native startup background splash screen generator |
+<details>
+<summary><b>🔧 Production Dependencies (click to expand)</b></summary>
 
-### Development Dependencies
+<br/>
 
-| Dependency | Version | Purpose |
-| :--- | :--- | :--- |
-| **`build_runner`** | `^2.4.13` | Command-line execution framework for code-generators |
-| **`freezed`** | `^3.2.5` | Generation engine for type-safe product states and models |
-| **`json_serializable`** | `^6.9.4` | Code generator that automatically handles DTO class deserialization |
-| **`flutter_lints`** | `^6.0.0` | Recommended Dart style and pattern guidelines |
-| **`flutter_test`** | `sdk: flutter` | Dedicated Flutter widget and unit testing engine |
+| Package | Version | Purpose |
+|:--------|:-------:|:--------|
+| `flutter_riverpod` | `^3.3.1` | Reactive state management with dependency caching |
+| `hive` | `^2.2.3` | Lightweight key-value local database (pure Dart) |
+| `hive_flutter` | `^1.1.0` | Flutter integration & Box listeners for Hive |
+| `dio` | `^5.7.0` | Feature-rich HTTP client with interceptors |
+| `awesome_dio_interceptor` | `^1.3.0` | Developer-friendly HTTP request/response logging |
+| `cached_network_image` | `^3.4.1` | Offline image caching with shimmer placeholders |
+| `get_it` | `^9.2.1` | Service locator for decoupled dependency injection |
+| `shimmer` | `^3.0.0` | Premium shimmer loading effects for lists & grids |
+| `flutter_screenutil` | `^5.9.3` | Responsive layout adaptation for all screen sizes |
+| `flutter_carousel_intro` | `^1.0.13` | Animated onboarding carousel with slide indicators |
+| `shared_preferences` | `^2.3.5` | Key-value store for simple settings & flags |
+| `freezed_annotation` | `^3.1.0` | Immutable class definitions via code generation |
+| `json_annotation` | `^4.9.0` | JSON serialization configuration for DTOs |
+| `intl` | `^0.20.2` | Internationalization, currency & date formatting |
+| `zentoast` | `^0.2.2` | Clean floating notification snackbars |
+| `flutter_native_splash` | `^2.3.1` | Native startup background splash generator |
+| `flutter_launcher_icons` | `^0.14.4` | CLI tool for Android/iOS launcher icon generation |
+
+</details>
+
+<details>
+<summary><b>🛠 Development Dependencies (click to expand)</b></summary>
+
+<br/>
+
+| Package | Version | Purpose |
+|:--------|:-------:|:--------|
+| `build_runner` | `^2.4.13` | CLI runner for code generators |
+| `freezed` | `^3.2.5` | Type-safe state & model code generation |
+| `json_serializable` | `^6.9.4` | Automatic DTO deserialization code generation |
+| `flutter_lints` | `^6.0.0` | Recommended Dart style guidelines |
+| `flutter_test` | `sdk: flutter` | Flutter unit & widget testing engine |
+
+</details>
 
 ---
 
-## Testing Pipeline
+<br/>
 
-The application features a comprehensive unit testing architecture located inside the `test/` directory.
+## Testing <a name="testing"></a>
 
-### What is Tested?
-1.  **Serialization & Domain Mapping**: Verifies correct JSON responses from network endpoints and their transformations.
-2.  **Onboarding State Engine**: Validates carousel slide states and completion callbacks.
-3.  **Favorites State Notifier**: Asserts list loading, adding items, toggling, removing, and database-safe bulk removals.
+Productify ships with a **13/13 passing** unit test suite. All tests run in pure Dart VM — completely isolated from Hive, Dio, or any real network.
 
-> [!NOTE]
-> All unit tests are executed using **Type-Safe Mock Repositories (`FakeFavoriteRepository`, `FakeOnboardingRepository`)** and run completely isolated from any actual Hive databases or network adapters for rapid-fire VM execution.
+**What's tested:**
 
-### How to Run the Tests:
-Ensure your environment is set up and execute the following commands in your workspace:
+- **Serialization & Domain Mapping** — verifies JSON → Entity transformations
+- **Onboarding State Engine** — validates carousel slide states & completion callbacks  
+- **Favorites State Notifier** — asserts load, add, toggle, remove, and bulk-clear operations
+
+> Tests use **Type-Safe Fake Repositories** (`FakeFavoriteRepository`, `FakeOnboardingRepository`) and **Riverpod `ProviderContainer`** for isolated, repeatable results.
 
 ```bash
-# 1. Clear caching
+# Run the full test suite
 flutter clean
-
-# 2. Get dependencies
 flutter pub get
-
-# 3. Run all tests
 flutter test
 ```
 
 ---
 
-## Setup & Execution Guide
+<br/>
 
-Follow these quick commands to build and run the application locally:
+## Quick Start <a name="quick-start"></a>
 
 ### Prerequisites
-*   Flutter SDK version `^3.11.1` or higher.
-*   Cocoapods installed (for iOS builds).
 
-### Step-by-Step Installation
-1.  **Clone the repository**:
-    ```bash
-    git clone https://github.com/Noctambulist007/Productify.git
-    cd productify
-    ```
+- Flutter SDK `^3.11.1` or higher
+- Dart SDK `^3.x`
+- CocoaPods (for iOS builds)
 
-2.  **Install dependencies**:
-    ```bash
-    flutter pub get
-    ```
+### Installation
 
-3.  **Run Code Generators (Freezed & JSON Serializers)**:
-    ```bash
-    flutter pub run build_runner build --delete-conflicting-outputs
-    ```
+```bash
+# 1. Clone the repository
+git clone https://github.com/Noctambulist007/Productify.git
+cd productify
 
-4.  **Run the application**:
-    ```bash
-    # Run on default connected emulator or device
-    flutter run
-    ```
+# 2. Install dependencies
+flutter pub get
 
----
+# 3. Run code generators (Freezed + JSON serializers)
+flutter pub run build_runner build --delete-conflicting-outputs
 
-## Submission Information
-*   **Repository URL**: [https://github.com/Noctambulist007/Productify.git](https://github.com/Noctambulist007/Productify.git)
-*   **Submission Date**: May 18, 2026 (Submitted well before the May 20 deadline!)
+# 4. Launch the app
+flutter run
+```
+
+### Or just download the APK
+
+**[Download Productify v1.0.0 APK](https://github.com/Noctambulist007/Productify/releases/download/Productify/Productify_v1.0.0.apk)**
+
+> Works on any Android device — no build step required.
 
 ---
 
-*Developed for the BrandTECH Mobile App Developer Task.*
+<br/>
+
+## Submission
+
+| | |
+|---|---|
+| **Repository** | [github.com/Noctambulist007/Productify](https://github.com/Noctambulist007/Productify) |
+| **Submitted** | May 19, 2026 — *ahead of the May 20 deadline* |
+| **Task** | BrandTECH Mobile App Developer Technical Task |
+| **APK** | [Download v1.0.0](https://github.com/Noctambulist007/Productify/releases/download/Productify/Productify_v1.0.0.apk) |
+
+---
+
+<br/>
+
+<div align="center">
+
+*Built with ❤️ in Flutter &nbsp;·&nbsp; Crafted for BrandTECH*
+
+<br/>
+
+[![Made with Flutter](https://img.shields.io/badge/Made%20with-Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)](https://flutter.dev)
+
+</div>
