@@ -306,7 +306,7 @@ flutter run
 
 <div align="center">
 
-*Built in Flutter &nbsp;·&nbsp; Crafted for BrandTECH*
+*Built in Flutter &nbsp;·&nbsp; Made for BrandTECH*
 
 <br/>
 
