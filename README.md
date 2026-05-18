@@ -1,20 +1,20 @@
-# 🛒 Productify — Clean Architecture Flutter App
+# Productify — Clean Architecture Flutter App
 
 [![Flutter Version](https://img.shields.io/badge/Flutter-%E2%89%A53.11.1-blue.svg?logo=flutter&logoColor=white)](https://flutter.dev)
 [![State Management](https://img.shields.io/badge/State%20Management-Riverpod%20v3-red.svg)](https://riverpod.dev)
 [![Local Storage](https://img.shields.io/badge/Local%20Storage-Hive-orange.svg)](https://docs.hivedb.dev/)
-[![Arch](https://img.shields.io/badge/Architecture-Clean%20Architecture-green.svg)](#🏗️-architectural-philosophy)
-[![Tests Passed](https://img.shields.io/badge/Tests-13%20%2F%2013%20Passed-brightgreen.svg)](#🧪-testing-pipeline)
+[![Arch](https://img.shields.io/badge/Architecture-Clean%20Architecture-green.svg)](#architectural-philosophy)
+[![Tests Passed](https://img.shields.io/badge/Tests-13%20%2F%2013%20Passed-brightgreen.svg)](#testing-pipeline)
 
 A premium, state-of-the-art Flutter mobile application designed for the **BrandTECH Technical Task**. Productify showcases an interactive product catalog integrated with local persistence databases, premium micro-animations, theme flexibility, and robust clean-architecture standards.
 
 ---
 
-## ✨ Features Checklist & Beyond (Core vs. Premium)
+## Features Checklist & Beyond (Core vs. Premium)
 
 This application satisfies all **BrandTECH Technical Task** requirements and goes above and beyond with premium additions:
 
-### 📋 Technical Task Requirements (Core)
+### Technical Task Requirements (Core)
 - [x] **Home Screen**: Fetches and displays products dynamically from `https://fakestoreapi.com/products`.
 - [x] **Product Cards**: Exquisitely laid out cards showcasing `image`, `name`, `price`, and interactive rating chips.
 - [x] **Search / Filtering**: Built-in real-time query filter on the product feed.
@@ -26,21 +26,21 @@ This application satisfies all **BrandTECH Technical Task** requirements and goe
 
 ---
 
-### 🌟 Premium Extras & Bonus Additions
-*   **🌅 Immersive Splash Screen**: Clean visual transition on startup.
-*   **🚀 Interactive 4-Screen Onboarding**: A stunning page slider using smooth typography, graphics, and indicator animations.
-*   **🌓 Seamless Dark & Light Themes**: Dynamic app-wide dark mode support with tailored HSL primary assets.
-*   **🖼️ High-Performance Image Caching**: Network images are locally cached (`cached_network_image`) for zero internet lag.
-*   **🔍 Full-Screen Zoomable Gallery**: Tap any product image to zoom, rotate, and interact in full resolution.
-*   **↕️ Expandable Descriptions**: Long details are cleanly collapsed with a tap-to-expand option.
-*   **🔄 Pull-to-Refresh Support**: Refresh feeds on the go.
-*   **⚡ Related Products Carousel**: Suggests contextual matching products on details pages.
-*   **⚙️ 5-Way Advanced Filter Engine**: Filter by search text, sort by categories, prices, ratings, and count fields.
-*   **🛡️ Robust Unit Test Suite**: Completely tested using custom Repository Fakes and Riverpod Container controllers.
+### Premium Extras & Bonus Additions
+*   **Immersive Splash Screen**: Clean visual transition on startup.
+*   **Interactive 4-Screen Onboarding**: A stunning page slider using smooth typography, graphics, and indicator animations.
+*   **Seamless Dark & Light Themes**: Dynamic app-wide dark mode support with tailored HSL primary assets.
+*   **High-Performance Image Caching**: Network images are locally cached (`cached_network_image`) for zero internet lag.
+*   **Full-Screen Zoomable Gallery**: Tap any product image to zoom, rotate, and interact in full resolution.
+*   **Expandable Descriptions**: Long details are cleanly collapsed with a tap-to-expand option.
+*   **Pull-to-Refresh Support**: Refresh feeds on the go.
+*   **Related Products Carousel**: Suggests contextual matching products on details pages.
+*   **5-Way Advanced Filter Engine**: Filter by search text, sort by categories, prices, ratings, and count fields.
+*   **Robust Unit Test Suite**: Completely tested using custom Repository Fakes and Riverpod Container controllers.
 
 ---
 
-## 🏗️ Architectural Philosophy
+## Architectural Philosophy
 
 The project is structured under **Clean Architecture** to ensure clean separation of concerns, testability, and fast iteration:
 
@@ -71,7 +71,7 @@ lib/
 
 ---
 
-## 📦 Core Libraries & Plugins Used
+## Core Libraries & Plugins Used
 
 | Dependency | Version | Purpose |
 | :--- | :--- | :--- |
@@ -85,11 +85,11 @@ lib/
 
 ---
 
-## 🧪 Testing Pipeline
+## Testing Pipeline
 
 The application features a comprehensive unit testing architecture located inside the `test/` directory.
 
-### 🔬 What is Tested?
+### What is Tested?
 1.  **Serialization & Domain Mapping**: Verifies correct JSON responses from network endpoints and their transformations.
 2.  **Onboarding State Engine**: Validates carousel slide states and completion callbacks.
 3.  **Favorites State Notifier**: Asserts list loading, adding items, toggling, removing, and database-safe bulk removals.
@@ -97,7 +97,7 @@ The application features a comprehensive unit testing architecture located insid
 > [!NOTE]
 > All unit tests are executed using **Type-Safe Mock Repositories (`FakeFavoriteRepository`, `FakeOnboardingRepository`)** and run completely isolated from any actual Hive databases or network adapters for rapid-fire VM execution.
 
-### 🏃 How to Run the Tests:
+### How to Run the Tests:
 Ensure your environment is set up and execute the following commands in your workspace:
 
 ```bash
@@ -113,7 +113,7 @@ flutter test
 
 ---
 
-## 🚀 Setup & Execution Guide
+## Setup & Execution Guide
 
 Follow these quick commands to build and run the application locally:
 
@@ -146,10 +146,10 @@ Follow these quick commands to build and run the application locally:
 
 ---
 
-## 📁 Submission Information
+## Submission Information
 *   **Repository URL**: [https://github.com/Noctambulist007/Productify.git](https://github.com/Noctambulist007/Productify.git)
 *   **Submission Date**: May 18, 2026 (Submitted well before the May 20 deadline!)
 
 ---
 
-*Developed with ❤️ for the BrandTECH Mobile App Developer Task.*
+*Developed for the BrandTECH Mobile App Developer Task.*
