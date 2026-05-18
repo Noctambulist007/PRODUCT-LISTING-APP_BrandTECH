@@ -34,6 +34,7 @@ This application satisfies all **BrandTECH Technical Task** requirements and goe
 *   **Full-Screen Zoomable Gallery**: Tap any product image to zoom, rotate, and interact in full resolution.
 *   **Expandable Descriptions**: Long details are cleanly collapsed with a tap-to-expand option.
 *   **Pull-to-Refresh Support**: Refresh feeds on the go.
+*   **Incremental Pagination and Lazy Loading**: Optimised product feed pagination that maintains a fixed page 1 and dynamically scales page limits in steps of 10 up to the API ceiling of 20 items for high-performance lazy loading.
 *   **Related Products Carousel**: Suggests contextual matching products on details pages.
 *   **5-Way Advanced Filter Engine**: Filter by search text, sort by categories, prices, ratings, and count fields.
 *   **Robust Unit Test Suite**: Completely tested using custom Repository Fakes and Riverpod Container controllers.
