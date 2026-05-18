@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:productify/data/datasource/remote/model/response/rating/rating_response.dart';
 
 part 'product_response.freezed.dart';
+
 part 'product_response.g.dart';
 
 @freezed
