@@ -310,7 +310,7 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
   );
 
-// Body Text
+  // Body Text
   static TextStyle bodyLarge = TextStyle(
     fontFamily: 'Montserrat',
     fontSize: 20.sp,

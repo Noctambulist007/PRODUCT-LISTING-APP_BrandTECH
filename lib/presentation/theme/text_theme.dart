@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
- TextTheme textTheme = TextTheme(
+TextTheme textTheme = TextTheme(
   // Body Text
   bodySmall: TextStyle(
     fontFamily: 'Montserrat',
