@@ -128,12 +128,12 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function( List<Product> products,  bool hasMore)?  success,TResult Function( String message)?  error,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function( List<Product> products,  List<Product> filtered,  ProductSort sort,  bool hasMore,  bool isLoadingMore)?  success,TResult Function( String message)?  error,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case InitialState() when initial != null:
 return initial();case LoadingState() when loading != null:
 return loading();case SuccessState() when success != null:
-return success(_that.products,_that.hasMore);case ErrorState() when error != null:
+return success(_that.products,_that.filtered,_that.sort,_that.hasMore,_that.isLoadingMore);case ErrorState() when error != null:
 return error(_that.message);case _:
   return orElse();
 
@@ -152,12 +152,12 @@ return error(_that.message);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function( List<Product> products,  bool hasMore)  success,required TResult Function( String message)  error,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function( List<Product> products,  List<Product> filtered,  ProductSort sort,  bool hasMore,  bool isLoadingMore)  success,required TResult Function( String message)  error,}) {final _that = this;
 switch (_that) {
 case InitialState():
 return initial();case LoadingState():
 return loading();case SuccessState():
-return success(_that.products,_that.hasMore);case ErrorState():
+return success(_that.products,_that.filtered,_that.sort,_that.hasMore,_that.isLoadingMore);case ErrorState():
 return error(_that.message);case _:
   throw StateError('Unexpected subclass');
 
@@ -175,12 +175,12 @@ return error(_that.message);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function( List<Product> products,  bool hasMore)?  success,TResult? Function( String message)?  error,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function( List<Product> products,  List<Product> filtered,  ProductSort sort,  bool hasMore,  bool isLoadingMore)?  success,TResult? Function( String message)?  error,}) {final _that = this;
 switch (_that) {
 case InitialState() when initial != null:
 return initial();case LoadingState() when loading != null:
 return loading();case SuccessState() when success != null:
-return success(_that.products,_that.hasMore);case ErrorState() when error != null:
+return success(_that.products,_that.filtered,_that.sort,_that.hasMore,_that.isLoadingMore);case ErrorState() when error != null:
 return error(_that.message);case _:
   return null;
 
@@ -257,7 +257,7 @@ String toString() {
 
 
 class SuccessState implements ProductUiState {
-  const SuccessState({required final  List<Product> products, this.hasMore = true}): _products = products;
+  const SuccessState({required final  List<Product> products, required final  List<Product> filtered, this.sort = ProductSort.none, this.hasMore = true, this.isLoadingMore = false}): _products = products,_filtered = filtered;
   
 
  final  List<Product> _products;
@@ -267,7 +267,16 @@ class SuccessState implements ProductUiState {
   return EqualUnmodifiableListView(_products);
 }
 
+ final  List<Product> _filtered;
+ List<Product> get filtered {
+  if (_filtered is EqualUnmodifiableListView) return _filtered;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_filtered);
+}
+
+@JsonKey() final  ProductSort sort;
 @JsonKey() final  bool hasMore;
+@JsonKey() final  bool isLoadingMore;
 
 /// Create a copy of ProductUiState
 /// with the given fields replaced by the non-null parameter values.
@@ -279,16 +288,16 @@ $SuccessStateCopyWith<SuccessState> get copyWith => _$SuccessStateCopyWithImpl<S
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SuccessState&&const DeepCollectionEquality().equals(other._products, _products)&&(identical(other.hasMore, hasMore) || other.hasMore == hasMore));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SuccessState&&const DeepCollectionEquality().equals(other._products, _products)&&const DeepCollectionEquality().equals(other._filtered, _filtered)&&(identical(other.sort, sort) || other.sort == sort)&&(identical(other.hasMore, hasMore) || other.hasMore == hasMore)&&(identical(other.isLoadingMore, isLoadingMore) || other.isLoadingMore == isLoadingMore));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_products),hasMore);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_products),const DeepCollectionEquality().hash(_filtered),sort,hasMore,isLoadingMore);
 
 @override
 String toString() {
-  return 'ProductUiState.success(products: $products, hasMore: $hasMore)';
+  return 'ProductUiState.success(products: $products, filtered: $filtered, sort: $sort, hasMore: $hasMore, isLoadingMore: $isLoadingMore)';
 }
 
 
@@ -299,7 +308,7 @@ abstract mixin class $SuccessStateCopyWith<$Res> implements $ProductUiStateCopyW
   factory $SuccessStateCopyWith(SuccessState value, $Res Function(SuccessState) _then) = _$SuccessStateCopyWithImpl;
 @useResult
 $Res call({
- List<Product> products, bool hasMore
+ List<Product> products, List<Product> filtered, ProductSort sort, bool hasMore, bool isLoadingMore
 });
 
 
@@ -316,10 +325,13 @@ class _$SuccessStateCopyWithImpl<$Res>
 
 /// Create a copy of ProductUiState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? products = null,Object? hasMore = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? products = null,Object? filtered = null,Object? sort = null,Object? hasMore = null,Object? isLoadingMore = null,}) {
   return _then(SuccessState(
 products: null == products ? _self._products : products // ignore: cast_nullable_to_non_nullable
-as List<Product>,hasMore: null == hasMore ? _self.hasMore : hasMore // ignore: cast_nullable_to_non_nullable
+as List<Product>,filtered: null == filtered ? _self._filtered : filtered // ignore: cast_nullable_to_non_nullable
+as List<Product>,sort: null == sort ? _self.sort : sort // ignore: cast_nullable_to_non_nullable
+as ProductSort,hasMore: null == hasMore ? _self.hasMore : hasMore // ignore: cast_nullable_to_non_nullable
+as bool,isLoadingMore: null == isLoadingMore ? _self.isLoadingMore : isLoadingMore // ignore: cast_nullable_to_non_nullable
 as bool,
   ));
 }
