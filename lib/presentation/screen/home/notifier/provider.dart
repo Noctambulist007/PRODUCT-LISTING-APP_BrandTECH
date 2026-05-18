@@ -1,10 +1,6 @@
-import 'package:flutter_riverpod/legacy.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:productify/presentation/screen/home/notifier/product_notifier.dart';
 import 'package:productify/presentation/screen/home/state/product_ui_state.dart';
 
-typedef ProductNotifierProvider =
-    StateNotifierProvider<ProductNotifier, ProductUiState>;
-
-final ProductNotifierProvider productNotifierProvider = StateNotifierProvider(
-  (ref) => ProductNotifier(),
-);
+final productNotifierProvider =
+    NotifierProvider<ProductNotifier, ProductUiState>(ProductNotifier.new);
