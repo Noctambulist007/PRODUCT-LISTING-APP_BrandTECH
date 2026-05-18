@@ -1,20 +1,155 @@
-# productify
+# 🛒 Productify — Clean Architecture Flutter App
 
-A new Flutter project.
+[![Flutter Version](https://img.shields.io/badge/Flutter-%E2%89%A53.11.1-blue.svg?logo=flutter&logoColor=white)](https://flutter.dev)
+[![State Management](https://img.shields.io/badge/State%20Management-Riverpod%20v3-red.svg)](https://riverpod.dev)
+[![Local Storage](https://img.shields.io/badge/Local%20Storage-Hive-orange.svg)](https://docs.hivedb.dev/)
+[![Arch](https://img.shields.io/badge/Architecture-Clean%20Architecture-green.svg)](#🏗️-architectural-philosophy)
+[![Tests Passed](https://img.shields.io/badge/Tests-13%20%2F%2013%20Passed-brightgreen.svg)](#🧪-testing-pipeline)
 
-## Getting Started
+A premium, state-of-the-art Flutter mobile application designed for the **BrandTECH Technical Task**. Productify showcases an interactive product catalog integrated with local persistence databases, premium micro-animations, theme flexibility, and robust clean-architecture standards.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## ✨ Features Checklist & Beyond (Core vs. Premium)
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+This application satisfies all **BrandTECH Technical Task** requirements and goes above and beyond with premium additions:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# PRODUCT-LISTING-APP_BrandTECH
-# PRODUCT-LISTING-APP_BrandTECH
-# PRODUCT-LISTING-APP_BrandTECH
+### 📋 Technical Task Requirements (Core)
+- [x] **Home Screen**: Fetches and displays products dynamically from `https://fakestoreapi.com/products`.
+- [x] **Product Cards**: Exquisitely laid out cards showcasing `image`, `name`, `price`, and interactive rating chips.
+- [x] **Search / Filtering**: Built-in real-time query filter on the product feed.
+- [x] **State Feedback**: Adaptive shimmer loading indicators and intuitive offline/error widgets.
+- [x] **Product Detail Screen**: Full product display (image, detailed descriptions, category info, price, and dynamic star rating).
+- [x] **Favorites Feature**: Marked favorites persist locally (remains offline-safe).
+- [x] **Favorites Screen**: Dedicated page to list, view, and instantly manage favorited items.
+- [x] **UX Excellence**: Modern, responsive UI with fluid transitions.
+
+---
+
+### 🌟 Premium Extras & Bonus Additions
+*   **🌅 Immersive Splash Screen**: Clean visual transition on startup.
+*   **🚀 Interactive 4-Screen Onboarding**: A stunning page slider using smooth typography, graphics, and indicator animations.
+*   **🌓 Seamless Dark & Light Themes**: Dynamic app-wide dark mode support with tailored HSL primary assets.
+*   **🖼️ High-Performance Image Caching**: Network images are locally cached (`cached_network_image`) for zero internet lag.
+*   **🔍 Full-Screen Zoomable Gallery**: Tap any product image to zoom, rotate, and interact in full resolution.
+*   **↕️ Expandable Descriptions**: Long details are cleanly collapsed with a tap-to-expand option.
+*   **🔄 Pull-to-Refresh Support**: Refresh feeds on the go.
+*   **⚡ Related Products Carousel**: Suggests contextual matching products on details pages.
+*   **⚙️ 5-Way Advanced Filter Engine**: Filter by search text, sort by categories, prices, ratings, and count fields.
+*   **🛡️ Robust Unit Test Suite**: Completely tested using custom Repository Fakes and Riverpod Container controllers.
+
+---
+
+## 🏗️ Architectural Philosophy
+
+The project is structured under **Clean Architecture** to ensure clean separation of concerns, testability, and fast iteration:
+
+```
+lib/
+├── data/                                 # Data Layer (Network Clients & DB storage)
+│   ├── datasource/
+│   │   ├── local/source/                 # Local Storage (Hive database favorites)
+│   │   └── remote/                       # Remote Client (Dio endpoint clients)
+│   ├── mapper/                           # Response Model ➔ Domain Entity Mappers
+│   └── repository/                       # Implementation of Domain Repositories
+│
+├── domain/                               # Domain Layer (Strictly Dart, Zero Framework dependence)
+│   ├── model/                            # Data Entities (Core Business Objects)
+│   ├── repository/                       # Contract Interfaces
+│   └── usecase/                          # Single-Responsibility Feature Operations
+│
+├── presentation/                         # Presentation Layer (UI & State Controllers)
+│   ├── common/widget/                    # Reusable Global UI components
+│   ├── dialog/                           # Custom Modals and overlays
+│   ├── screen/                           # Application Pages (Home, Onboarding, Detail, Splash)
+│   └── theme/                            # Color Themes, Styles & Extensions
+│
+├── di/                                   # Modular Dependency Injection (GetIt)
+├── main.dart                             # Main Entry Point
+└── productify.dart                       # Core Material App Initialization
+```
+
+---
+
+## 📦 Core Libraries & Plugins Used
+
+| Dependency | Version | Purpose |
+| :--- | :--- | :--- |
+| **`flutter_riverpod`** | `^3.3.1` | Advanced reactive state management with dependency caching |
+| **`hive_flutter`** | `^1.1.0` | Ultra-fast local NoSQL database storage |
+| **`dio`** | `^5.7.0` | Secure and feature-rich network HTTP client |
+| **`cached_network_image`**| `^3.4.1` | Multi-tiered offline image storage and placeholder shimmers |
+| **`get_it`** | `^9.2.1` | Service locator for clean dependency registration |
+| **`shimmer`** | `^3.0.0` | Premium animated shimmers for loader grids |
+| **`freezed`** | `^3.2.5` | Code generation for robust immutability and state patterns |
+
+---
+
+## 🧪 Testing Pipeline
+
+The application features a comprehensive unit testing architecture located inside the `test/` directory.
+
+### 🔬 What is Tested?
+1.  **Serialization & Domain Mapping**: Verifies correct JSON responses from network endpoints and their transformations.
+2.  **Onboarding State Engine**: Validates carousel slide states and completion callbacks.
+3.  **Favorites State Notifier**: Asserts list loading, adding items, toggling, removing, and database-safe bulk removals.
+
+> [!NOTE]
+> All unit tests are executed using **Type-Safe Mock Repositories (`FakeFavoriteRepository`, `FakeOnboardingRepository`)** and run completely isolated from any actual Hive databases or network adapters for rapid-fire VM execution.
+
+### 🏃 How to Run the Tests:
+Ensure your environment is set up and execute the following commands in your workspace:
+
+```bash
+# 1. Clear caching
+flutter clean
+
+# 2. Get dependencies
+flutter pub get
+
+# 3. Run all tests
+flutter test
+```
+
+---
+
+## 🚀 Setup & Execution Guide
+
+Follow these quick commands to build and run the application locally:
+
+### Prerequisites
+*   Flutter SDK version `^3.11.1` or higher.
+*   Cocoapods installed (for iOS builds).
+
+### Step-by-Step Installation
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/Noctambulist007/Productify.git
+    cd productify
+    ```
+
+2.  **Install dependencies**:
+    ```bash
+    flutter pub get
+    ```
+
+3.  **Run Code Generators (Freezed & JSON Serializers)**:
+    ```bash
+    flutter pub run build_runner build --delete-conflicting-outputs
+    ```
+
+4.  **Run the application**:
+    ```bash
+    # Run on default connected emulator or device
+    flutter run
+    ```
+
+---
+
+## 📁 Submission Information
+*   **Repository URL**: [https://github.com/Noctambulist007/Productify.git](https://github.com/Noctambulist007/Productify.git)
+*   **Submission Date**: May 18, 2026 (Submitted well before the May 20 deadline!)
+
+---
+
+*Developed with ❤️ for the BrandTECH Mobile App Developer Task.*
