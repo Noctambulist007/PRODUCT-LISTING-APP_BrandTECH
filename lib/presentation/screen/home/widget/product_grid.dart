@@ -23,27 +23,18 @@ class ProductGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final t = context.appTheme;
-    final itemCount = products.length + 1;
+    final itemCount = products.length + (hasMore || isLoadingMore ? 1 : 0);
 
     return SliverPadding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       sliver: SliverList(
         delegate: SliverChildBuilderDelegate((context, index) {
           if (index == products.length) {
-            if (isLoadingMore) {
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16),
-                child: LoadMoreIndicator(t: t),
+              child: isLoadingMore ? LoadMoreIndicator(t: t) : EndCaption(t: t),
               );
             }
-            if (!hasMore) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                child: EndCaption(t: t),
-              );
-            }
-            return const SizedBox.shrink();
-          }
 
           final delay = Duration(milliseconds: (index * 50).clamp(0, 400));
           return Padding(

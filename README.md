@@ -15,6 +15,49 @@ A premium, state-of-the-art Flutter mobile application designed for the **BrandT
 
 ---
 
+## Visual Showcases
+
+### Walkthrough Demonstration
+
+An interactive, high-fidelity walkthrough demonstration of all user onboarding flows, search systems, filter queries, dark/light modes, related carousels, and local databases:
+[View Productify Walkthrough Video](assets/github_readme/productify_full_app_walkthrough.mp4)
+
+### Screen Captures
+
+#### Splash and Onboarding
+
+| Splash Screen | Onboarding 1 | Onboarding 2 |
+| :---: | :---: | :---: |
+| <img src="assets/github_readme/splash_screen.jpg" width="220" /> | <img src="assets/github_readme/onboarding_screen_1.jpg" width="220" /> | <img src="assets/github_readme/onboarding_screen_2.jpg" width="220" /> |
+
+| Onboarding 3 | Onboarding 4 |
+| :---: | :---: |
+| <img src="assets/github_readme/onboarding_screen_3.jpg" width="220" /> | <img src="assets/github_readme/onboarding_screen_4.jpg" width="220" /> |
+
+#### Home Feed and Advanced Search/Filter
+
+| Home Feed (Light Mode) | Home Feed (Dark Mode) | Shimmer Loading State |
+| :---: | :---: | :---: |
+| <img src="assets/github_readme/home_screen_light.jpg" width="220" /> | <img src="assets/github_readme/home_screen_dark.jpg" width="220" /> | <img src="assets/github_readme/shimmer_product_loading_view_home_screen.jpg" width="220" /> |
+
+| Active Search Query | Advanced Sort and Filter Sheet |
+| :---: | :---: |
+| <img src="assets/github_readme/search_screen.jpg" width="220" /> | <img src="assets/github_readme/sort_modal_sheet.jpg" width="220" /> |
+
+#### Product Specifications and Related Sections
+
+| Product Details (Light Mode) | Specifications View | Product Details (Dark Mode) |
+| :---: | :---: | :---: |
+| <img src="assets/github_readme/product_detail_screen_light_1.jpg" width="220" /> | <img src="assets/github_readme/product_detail_screen_light_2.jpg" width="220" /> | <img src="assets/github_readme/product_detail_screen_dark_1.jpg" width="220" /> |
+
+#### Favorites and Offline Persistence
+
+| Favorites List (Light Mode) | Favorites List (Dark Mode) |
+| :---: | :---: |
+| <img src="assets/github_readme/favorite_screen_light.jpg" width="220" /> | <img src="assets/github_readme/favorite_screen_dark.jpg" width="220" /> |
+
+---
+
 ## Features Checklist & Beyond (Core vs. Premium)
 
 This application satisfies all **BrandTECH Technical Task** requirements and goes above and beyond with premium additions:
