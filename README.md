@@ -73,15 +73,40 @@ lib/
 
 ## Core Libraries & Plugins Used
 
+### Production Dependencies
+
 | Dependency | Version | Purpose |
 | :--- | :--- | :--- |
 | **`flutter_riverpod`** | `^3.3.1` | Advanced reactive state management with dependency caching |
-| **`hive_flutter`** | `^1.1.0` | Ultra-fast local NoSQL database storage |
-| **`dio`** | `^5.7.0` | Secure and feature-rich network HTTP client |
-| **`cached_network_image`**| `^3.4.1` | Multi-tiered offline image storage and placeholder shimmers |
-| **`get_it`** | `^9.2.1` | Service locator for clean dependency registration |
-| **`shimmer`** | `^3.0.0` | Premium animated shimmers for loader grids |
-| **`freezed`** | `^3.2.5` | Code generation for robust immutability and state patterns |
+| **`hive`** | `^2.2.3` | Lightweight and fast key-value database written in pure Dart |
+| **`hive_flutter`** | `^1.1.0` | Hive extension for Flutter, providing easy integration with Box listeners |
+| **`dio`** | `^5.7.0` | Secure and feature-rich network HTTP client with interceptors |
+| **`awesome_dio_interceptor`** | `^1.3.0` | Developer-friendly terminal HTTP request and response logging |
+| **`cached_network_image`**| `^3.4.1` | Multi-tiered offline image caching and placeholder loading shimmers |
+| **`get_it`** | `^9.2.1` | Dependency injection service locator for decoupled architectures |
+| **`shimmer`** | `^3.0.0` | Premium loading effect indicators for grid and list shimmers |
+| **`flutter_screenutil`** | `^5.9.3` | Professional layout adaptation for responsive screen scaling |
+| **`flutter_carousel_intro`** | `^1.0.13` | Highly interactive onboarding introduction slide carousel |
+| **`shared_preferences`** | `^2.3.5` | Key-value store for simple settings and local variables |
+| **`freezed_annotation`** | `^3.1.0` | Declarative definitions for code-generated immutable classes |
+| **`json_annotation`** | `^4.9.0` | Direct configuration rules for serializing class models |
+| **`intl`** | `^0.20.2` | Advanced text internationalization and currency formatting helpers |
+| **`timezone`** | `^0.11.0` | Multi-zone time translation and local scheduling helpers |
+| **`zentoast`** | `^0.2.2` | Clean floating notification snackbars and visual feedback |
+| **`cupertino_icons`** | `^1.0.8` | Standard iOS visual graphic icon assets |
+| **`flutter_launcher_icons`** | `^0.14.4` | Built-in CLI tool to easily rebuild Android/iOS app launcher icons |
+| **`icons_launcher`** | `^3.0.3` | Automated asset launcher icon builder helper |
+| **`flutter_native_splash`** | `^2.3.1` | Native startup background splash screen generator |
+
+### Development Dependencies
+
+| Dependency | Version | Purpose |
+| :--- | :--- | :--- |
+| **`build_runner`** | `^2.4.13` | Command-line execution framework for code-generators |
+| **`freezed`** | `^3.2.5` | Generation engine for type-safe product states and models |
+| **`json_serializable`** | `^6.9.4` | Code generator that automatically handles DTO class deserialization |
+| **`flutter_lints`** | `^6.0.0` | Recommended Dart style and pattern guidelines |
+| **`flutter_test`** | `sdk: flutter` | Dedicated Flutter widget and unit testing engine |
 
 ---
 
