@@ -1,12 +1,13 @@
-import 'package:kickoff/domain/repository/settings_repository.dart';
+import 'package:productify/domain/repository/onboarding_repository.dart';
 
 class SetOnboardingStatusUseCase {
-  final SettingsRepository _settingsRepository;
+  final OnboardingRepository _onboardingRepository;
 
-  SetOnboardingStatusUseCase({required SettingsRepository settingsRepository})
-      : _settingsRepository = settingsRepository;
+  SetOnboardingStatusUseCase({
+    required OnboardingRepository onboardingRepository,
+  }) : _onboardingRepository = onboardingRepository;
 
   Future<void> call(bool status) async {
-    await _settingsRepository.setOnboardingStatus(status);
+    await _onboardingRepository.setOnboardingStatus(status);
   }
 }

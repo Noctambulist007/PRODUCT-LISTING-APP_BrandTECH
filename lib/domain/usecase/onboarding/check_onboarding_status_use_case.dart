@@ -1,12 +1,13 @@
-import 'package:kickoff/domain/repository/settings_repository.dart';
+import 'package:productify/domain/repository/onboarding_repository.dart';
 
 class CheckOnboardingStatusUseCase {
-  final SettingsRepository _settingsRepository;
+  final OnboardingRepository _onboardingRepository;
 
-  CheckOnboardingStatusUseCase({required SettingsRepository settingsRepository})
-      : _settingsRepository = settingsRepository;
+  CheckOnboardingStatusUseCase({
+    required OnboardingRepository onboardingRepository,
+  }) : _onboardingRepository = onboardingRepository;
 
   Future<bool> call() async {
-    return await _settingsRepository.getOnboardingStatus();
+    return await _onboardingRepository.getOnboardingStatus();
   }
 }
