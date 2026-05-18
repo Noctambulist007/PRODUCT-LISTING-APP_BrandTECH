@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/github_readme/splash_screen.jpg" width="120" style="border-radius: 24px;" />
+<img src="assets/logo/app-logo.png" width="120" style="border-radius: 24px;" />
 
 # ✦ Productify
 
