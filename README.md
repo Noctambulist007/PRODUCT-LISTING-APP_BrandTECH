@@ -6,6 +6,11 @@
 [![Arch](https://img.shields.io/badge/Architecture-Clean%20Architecture-green.svg)](#architectural-philosophy)
 [![Tests Passed](https://img.shields.io/badge/Tests-13%20%2F%2013%20Passed-brightgreen.svg)](#testing-pipeline)
 
+> [!IMPORTANT]
+> **Production Android Build Available**
+> Download and install the compiled release APK to test all core and premium features directly on an Android device:
+> [Download Productify v1.0.0 APK](https://github.com/Noctambulist007/Productify/releases/download/Productify/Productify_v1.0.0.apk)
+
 A premium, state-of-the-art Flutter mobile application designed for the **BrandTECH Technical Task**. Productify showcases an interactive product catalog integrated with local persistence databases, premium micro-animations, theme flexibility, and robust clean-architecture standards.
 
 ---
