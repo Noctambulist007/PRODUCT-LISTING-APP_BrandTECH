@@ -40,11 +40,12 @@
 
 <div align="center">
 
-<!-- Video walkthrough — click the thumbnail below to watch the full demo -->
+<!-- Autoplay HTML5 Video Player -->
+<video src="https://raw.githubusercontent.com/Noctambulist007/Productify/main/assets/github_readme/productify_full_app_walkthrough.mp4" width="100%" max-width="800px" autoplay loop muted playsinline></video>
 
-[![Watch Full App Walkthrough](assets/github_readme/home_screen_dark.jpg)](assets/github_readme/productify_full_app_walkthrough.mp4)
+<br />
 
-> **[▶ Watch Full App Walkthrough](assets/github_readme/productify_full_app_walkthrough.mp4)** — covers all screens, dark/light mode, filtering, favorites, and animations.
+> **Pro-Tip:** If the video doesn't load instantly, you can also **[Watch/Download the Full App Walkthrough directly here](https://github.com/Noctambulist007/Productify/blob/main/assets/github_readme/productify_full_app_walkthrough.mp4)** — covers all screens, dark/light mode, filtering, favorites, and animations.
 
 </div>
 
