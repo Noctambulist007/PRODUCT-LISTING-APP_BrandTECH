@@ -39,7 +39,6 @@ abstract class AppRouter {
   }
 }
 
-// ── Fade + vertical micro-lift (home, modal-like screens) ─────────────────────
 PageRoute<T> _fadeSlide<T>(Widget page) {
   return PageRouteBuilder<T>(
     pageBuilder: (_, animation, __) => page,
@@ -65,7 +64,6 @@ PageRoute<T> _fadeSlide<T>(Widget page) {
   );
 }
 
-// ── Horizontal shared-axis slide (detail screen) ──────────────────────────────
 PageRoute<T> _sharedAxisX<T>(Widget page) {
   return PageRouteBuilder<T>(
     pageBuilder: (_, animation, __) => page,
@@ -77,7 +75,6 @@ PageRoute<T> _sharedAxisX<T>(Widget page) {
         curve: Curves.easeOutQuart,
         reverseCurve: Curves.easeInQuart,
       );
-      // Outgoing screen slides left slightly
       final secondaryCurved = CurvedAnimation(
         parent: secondaryAnimation,
         curve: Curves.easeOutQuart,

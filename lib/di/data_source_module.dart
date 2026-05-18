@@ -1,3 +1,5 @@
+import 'package:productify/data/datasource/local/source/product_local_data_source.dart';
+import 'package:productify/data/datasource/local/source/product_local_data_source_impl.dart';
 import 'package:productify/data/datasource/remote/source/product_remote_data_source_impl.dart';
 import 'package:productify/data/repository/source/remote/product_remote_data_source.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -10,6 +12,9 @@ Future<void> setUpDataSourceModule() async {
 
 Future<void> setUpLocalDataSourceModule() async {
   await getIt.isReady<SharedPreferences>();
+  getIt.registerLazySingleton<ProductLocalDataSource>(
+    () => ProductLocalDataSourceImpl(favoritesBox: getIt()),
+  );
 }
 
 Future<void> setUpRemoteDataSourceModule() async {

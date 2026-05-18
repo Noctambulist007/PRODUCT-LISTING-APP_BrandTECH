@@ -1,2 +1,1 @@
-Future<void> setUpServiceModule() async {
-}
+Future<void> setUpServiceModule() async {}

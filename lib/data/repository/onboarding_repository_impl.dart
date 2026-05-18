@@ -1,11 +1,11 @@
-import 'package:productify/domain/repository/settings_repository.dart';
+import 'package:productify/domain/repository/onboarding_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class SettingsRepositoryImpl implements SettingsRepository {
+class OnboardingRepositoryImpl implements OnboardingRepository {
   final SharedPreferences _sharedPreferences;
   static const String _keyOnboardingStatus = 'onboarding_status';
 
-  SettingsRepositoryImpl({required SharedPreferences sharedPreferences})
+  OnboardingRepositoryImpl({required SharedPreferences sharedPreferences})
     : _sharedPreferences = sharedPreferences;
 
   @override

@@ -17,15 +17,9 @@ class Toaster {
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: color,
-            border: Border.all(
-              color: Colors.black,
-              width: 3,
-            ),
+            border: Border.all(color: Colors.black, width: 3),
             boxShadow: const [
-              BoxShadow(
-                color: Colors.black,
-                offset: Offset(6, 6),
-              ),
+              BoxShadow(color: Colors.black, offset: Offset(6, 6)),
             ],
           ),
           child: Row(
@@ -34,16 +28,9 @@ class Toaster {
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   color: Colors.black,
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 2,
-                  ),
+                  border: Border.all(color: Colors.white, width: 2),
                 ),
-                child: Icon(
-                  icon,
-                  color: Colors.white,
-                  size: 22,
-                ),
+                child: Icon(icon, color: Colors.white, size: 22),
               ),
 
               const SizedBox(width: 14),
@@ -82,10 +69,7 @@ class Toaster {
 
               IconButton(
                 onPressed: () => toast.hide(context),
-                icon: const Icon(
-                  Icons.close,
-                  color: Colors.black,
-                ),
+                icon: const Icon(Icons.close, color: Colors.black),
               ),
             ],
           ),

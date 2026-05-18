@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:productify/presentation/theme/app_theme.dart';
-import 'package:productify/presentation/util/routes.dart';
+import 'package:productify/presentation/theme/notifier/provider.dart';
+import 'package:productify/domain/util/routes.dart';
 import 'package:zentoast/zentoast.dart';
 
-class Productify extends StatelessWidget {
+import 'presentation/theme/app_theme.dart';
+
+class Productify extends ConsumerWidget {
   const Productify({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final themeMode = ref.watch(themeNotifierProvider);
+
     return ToastProvider.create(
       child: ScreenUtilInit(
         designSize: const Size(375, 812),
@@ -21,11 +26,10 @@ class Productify extends StatelessWidget {
             title: 'Productify',
             theme: AppTheme.light,
             darkTheme: AppTheme.dark,
-            themeMode: ThemeMode.system,
+            themeMode: themeMode,
             debugShowCheckedModeBanner: false,
-            initialRoute: Routes.home,
-            onGenerateRoute: Routes.generateRoutes,
-
+            initialRoute: AppRoutes.splash,
+            onGenerateRoute: AppRouter.onGenerateRoute,
             builder: (context, child) {
               return ToastThemeProvider(
                 data: const ToastTheme(
@@ -34,10 +38,7 @@ class Productify extends StatelessWidget {
                 ),
                 child: Stack(
                   children: [
-                    Positioned.fill(
-                      child: child ?? const SizedBox(),
-                    ),
-
+                    Positioned.fill(child: child ?? const SizedBox()),
                     SafeArea(
                       child: ToastViewer(
                         alignment: Alignment.topRight,
