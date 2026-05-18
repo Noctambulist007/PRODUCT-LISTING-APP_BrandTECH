@@ -17,7 +17,6 @@ class FullScreenImageViewer extends StatelessWidget {
       backgroundColor: Colors.black,
       body: Stack(
         children: [
-          // Zoomable image with Hero tag
           Center(
             child: Hero(
               tag: tag,
@@ -40,7 +39,6 @@ class FullScreenImageViewer extends StatelessWidget {
               ),
             ),
           ),
-          // Close button
           SafeArea(
             child: Align(
               alignment: Alignment.topLeft,
