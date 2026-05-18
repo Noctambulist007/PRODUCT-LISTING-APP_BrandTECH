@@ -187,7 +187,6 @@ class ApiClient {
   }
 
   // Map Dio exceptions (and any other exceptions) to an exception type
-  // supported by our application.
   Future<R> _mapException<T, R>({
     required HttpLibraryMethod<T> method,
     required Converter<T, R> converter,
