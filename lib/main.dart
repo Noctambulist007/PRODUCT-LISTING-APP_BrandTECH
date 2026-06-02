@@ -5,7 +5,7 @@ import 'package:productify/injection_container.dart' as di;
 import 'package:productify/productify.dart';
 import 'package:zentoast/zentoast.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await di.setup();

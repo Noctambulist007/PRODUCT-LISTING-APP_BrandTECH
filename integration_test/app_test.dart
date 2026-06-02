@@ -18,7 +18,7 @@ void main() {
   group('end-to-end test', () {
     testWidgets('App launch and navigation flow', (tester) async {
       // 1. Launch the app.
-      app.main();
+      await app.main();
       await tester.pump();
       
       // 2. Wait for Splash Screen (1.2s delay + transitions) to complete
