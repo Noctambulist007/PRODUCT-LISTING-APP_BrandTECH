@@ -40,8 +40,6 @@ The purpose of this project is to showcase core software engineering practices, 
 
 * **Assessment Title:** Flutter Developer Technical Assessment
 * **Project Title:** Product Catalog Application
-* **Estimated Completion Time:** 3 June 2026 before 11:59 PM (Completed ahead of schedule on **2 June 2026**)
-* **Submission Recipients:** `abdullah.kodevio@gmail.com` (CC: `ashif.kodevio@gmail.com`)
 
 ---
 
@@ -155,7 +153,7 @@ The purpose of this project is to showcase core software engineering practices, 
 ### 7. Bonus / Premium Extras
 - **Dark & Light Mode**: A state-of-the-art system-aware theme featuring curated HSL dark/light palettes.
 - **Incremental Pagination**: Feeds are segmented dynamically to improve initial render performance.
-- **13/13 VM Test Suite**: Highly structured unit tests running with isolated mock repositories.
+- **71/71 Test Suite**: Comprehensive unit and widget tests with decoupled mock repositories.
 - **E2E Integration Testing CI/CD**: Seamless GitHub Actions pipeline using headless emulators.
 
 ---
@@ -330,13 +328,9 @@ This guarantees that any push or pull request to the `main`, `master`, or `devel
 ## Submission Info
 - **GitHub Repository**: [github.com/Noctambulist007/Productify](https://github.com/Noctambulist007/Productify)
 - **APK Download**: [Download v1.0.0 Stable APK](https://github.com/Noctambulist007/Productify/releases/download/Productify/Productify_v1.0.0.apk)
-- **Email Submission Address**: `abdullah.kodevio@gmail.com`
-- **CC Submission Address**: `ashif.kodevio@gmail.com`
 
 <br/>
 <div align="center">
-
-*Designed in Clean Architecture · Fulfilling the Kodevio Technical Assessment*
 
 [![Made with Flutter](https://img.shields.io/badge/Made%20with-Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)](https://flutter.dev)
 
