@@ -128,7 +128,7 @@ class _FavoriteScreenState extends ConsumerState<FavoriteScreen>
                               color: t.errorSurface,
                               borderRadius: BorderRadius.circular(12),
                               border: Border.all(
-                                color: t.errorColor.withOpacity(0.3),
+                                color: t.errorColor.withValues(alpha: 0.3),
                               ),
                             ),
                             child: Icon(

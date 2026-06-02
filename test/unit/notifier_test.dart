@@ -2,8 +2,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:productify/domain/model/product/product.dart';
 import 'package:productify/domain/model/rating/rating.dart';
-import 'package:productify/domain/repository/favorite_repository.dart';
-import 'package:productify/domain/repository/onboarding_repository.dart';
 import 'package:productify/domain/usecase/favorite/add_favorite_use_case.dart';
 import 'package:productify/domain/usecase/favorite/clear_favorites_use_case.dart';
 import 'package:productify/domain/usecase/favorite/get_favorites_use_case.dart';
@@ -15,50 +13,8 @@ import 'package:productify/presentation/screen/favorite/notifier/provider.dart';
 import 'package:productify/presentation/screen/favorite/state/favorite_ui_state.dart';
 import 'package:productify/presentation/screen/onboarding/notifier/provider.dart';
 
-class FakeOnboardingRepository implements OnboardingRepository {
-  bool? savedStatus;
-
-  @override
-  Future<bool> getOnboardingStatus() async {
-    return savedStatus ?? false;
-  }
-
-  @override
-  Future<void> setOnboardingStatus(bool status) async {
-    savedStatus = status;
-  }
-}
-
-class FakeFavoriteRepository implements FavoriteRepository {
-  final List<Product> _favorites = [];
-
-  @override
-  Future<void> addFavorite(Product product) async {
-    if (!_favorites.any((element) => element.id == product.id)) {
-      _favorites.add(product);
-    }
-  }
-
-  @override
-  Future<void> removeFavorite(int productId) async {
-    _favorites.removeWhere((element) => element.id == productId);
-  }
-
-  @override
-  Future<List<Product>> getFavorites() async {
-    return List.from(_favorites);
-  }
-
-  @override
-  Future<bool> isFavorite(int productId) async {
-    return _favorites.any((element) => element.id == productId);
-  }
-
-  @override
-  Future<void> clearAllFavorites() async {
-    _favorites.clear();
-  }
-}
+import '../mocks/fake_favorite_repository.dart';
+import '../mocks/fake_onboarding_repository.dart';
 
 void main() {
   group('OnboardingNotifier Unit Tests', () {

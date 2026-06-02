@@ -22,7 +22,7 @@ class CategoryIdRow extends StatelessWidget {
           decoration: BoxDecoration(
             color: t.accentSurface,
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: t.accentLight.withOpacity(0.5)),
+            border: Border.all(color: t.accentLight.withValues(alpha: 0.5)),
           ),
           child: Text(
             _formattedCat,

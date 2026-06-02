@@ -27,10 +27,10 @@ class FullScreenImageViewer extends StatelessWidget {
                   imageUrl: imageUrl,
                   fit: BoxFit.contain,
                   width: double.infinity,
-                  placeholder: (_, __) => const Center(
+                  placeholder: (_, _) => const Center(
                     child: CircularProgressIndicator(color: Colors.white),
                   ),
-                  errorWidget: (_, __, ___) => const Icon(
+                  errorWidget: (_, _, _) => const Icon(
                     Icons.broken_image,
                     color: Colors.white,
                     size: 60,
@@ -50,7 +50,7 @@ class FullScreenImageViewer extends StatelessWidget {
                     width: 40,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.2),
+                      color: Colors.white.withValues(alpha: 0.2),
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(

@@ -44,7 +44,7 @@ class SortCard extends StatelessWidget {
               width: 42,
               height: 42,
               decoration: BoxDecoration(
-                color: isSelected ? t.accentLight.withOpacity(0.25) : t.surface,
+                color: isSelected ? t.accentLight.withValues(alpha: 0.25) : t.surface,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(

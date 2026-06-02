@@ -59,7 +59,7 @@ class ProductSearchBar extends ConsumerWidget {
                   ),
                   suffixIcon: ValueListenableBuilder<TextEditingValue>(
                     valueListenable: controller,
-                    builder: (_, val, __) => val.text.isEmpty
+                    builder: (_, val, _) => val.text.isEmpty
                         ? const SizedBox.shrink()
                         : GestureDetector(
                             onTap: onClear,

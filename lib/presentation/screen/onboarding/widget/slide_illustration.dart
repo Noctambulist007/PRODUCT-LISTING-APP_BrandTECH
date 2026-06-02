@@ -12,7 +12,7 @@ class SlideIllustration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final glowColor = t.accent.withOpacity(isDark ? 0.15 : 0.08);
+    final glowColor = t.accent.withValues(alpha: isDark ? 0.15 : 0.08);
 
     return Container(
       width: double.infinity,
@@ -26,7 +26,7 @@ class SlideIllustration extends StatelessWidget {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               gradient: RadialGradient(
-                colors: [glowColor, glowColor.withOpacity(0.0)],
+                colors: [glowColor, glowColor.withValues(alpha: 0.0)],
               ),
             ),
           ),
@@ -39,9 +39,9 @@ class SlideIllustration extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               decoration: BoxDecoration(
-                color: t.accent.withOpacity(0.12),
+                color: t.accent.withValues(alpha: 0.12),
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: t.accent.withOpacity(0.3)),
+                border: Border.all(color: t.accent.withValues(alpha: 0.3)),
               ),
               child: Text(
                 slide.tag,
@@ -58,12 +58,12 @@ class SlideIllustration extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.6,
             height: MediaQuery.of(context).size.width * 0.6,
             decoration: BoxDecoration(
-              color: t.surface.withOpacity(0.9),
+              color: t.surface.withValues(alpha: 0.9),
               shape: BoxShape.circle,
               border: Border.all(color: t.border, width: 1.5),
               boxShadow: [
                 BoxShadow(
-                  color: t.accent.withOpacity(0.15),
+                  color: t.accent.withValues(alpha: 0.15),
                   blurRadius: 24,
                   offset: const Offset(0, 8),
                 ),

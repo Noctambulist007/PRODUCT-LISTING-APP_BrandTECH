@@ -63,7 +63,7 @@ class SlideBody extends StatelessWidget {
                 width: isActive ? 24 : 7,
                 height: 7,
                 decoration: BoxDecoration(
-                  color: isActive ? t.accent : t.accent.withOpacity(0.22),
+                  color: isActive ? t.accent : t.accent.withValues(alpha: 0.22),
                   borderRadius: BorderRadius.circular(4),
                 ),
               );

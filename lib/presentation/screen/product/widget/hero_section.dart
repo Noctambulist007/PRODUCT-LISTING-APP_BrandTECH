@@ -37,7 +37,7 @@ class HeroSection extends StatelessWidget {
                 imageUrl: product.image,
                 fit: BoxFit.contain,
                 width: double.infinity,
-                placeholder: (_, __) => Center(
+                placeholder: (_, _) => Center(
                   child: CircularProgressIndicator(
                     strokeWidth: 1.5,
                     color: t.border,
@@ -58,8 +58,8 @@ class HeroSection extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  t.background.withOpacity(0.55),
-                  t.background.withOpacity(0),
+                  t.background.withValues(alpha: 0.55),
+                  t.background.withValues(alpha: 0),
                 ],
               ),
             ),

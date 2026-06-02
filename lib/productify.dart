@@ -19,7 +19,7 @@ class Productify extends ConsumerWidget {
         designSize: const Size(375, 812),
         minTextAdapt: true,
         splitScreenMode: false,
-        builder: (_, __) => GestureDetector(
+        builder: (_, _) => GestureDetector(
           behavior: HitTestBehavior.translucent,
           onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
           child: MaterialApp(

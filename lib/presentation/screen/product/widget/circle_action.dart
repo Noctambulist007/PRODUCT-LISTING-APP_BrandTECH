@@ -21,12 +21,12 @@ class CircleAction extends StatelessWidget {
         width: 40,
         height: 40,
         decoration: BoxDecoration(
-          color: t.surface.withOpacity(0.92),
+          color: t.surface.withValues(alpha: 0.92),
           shape: BoxShape.circle,
           border: Border.all(color: t.border),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.08),
+              color: Colors.black.withValues(alpha: 0.08),
               blurRadius: 10,
               offset: const Offset(0, 3),
             ),

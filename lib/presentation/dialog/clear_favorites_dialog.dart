@@ -21,8 +21,8 @@ class ClearFavoritesDialog extends StatelessWidget {
       barrierDismissible: true,
       barrierLabel: 'dismiss',
       transitionDuration: const Duration(milliseconds: 250),
-      pageBuilder: (_, __, ___) => const SizedBox.shrink(),
-      transitionBuilder: (ctx, anim, _, __) {
+      pageBuilder: (_, _, _) => const SizedBox.shrink(),
+      transitionBuilder: (ctx, anim, _, _) {
         final curved = CurvedAnimation(parent: anim, curve: Curves.easeOutBack);
 
         return ScaleTransition(

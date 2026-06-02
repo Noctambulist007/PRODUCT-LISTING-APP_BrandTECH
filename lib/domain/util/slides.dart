@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:productify/domain/model/onboarding/slide_data.dart';
 
 const slides = [

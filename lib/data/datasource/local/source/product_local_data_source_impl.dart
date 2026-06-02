@@ -45,6 +45,7 @@ class ProductLocalDataSourceImpl implements ProductLocalDataSource {
           final jsonMap = jsonDecode(jsonString) as Map<String, dynamic>;
           final responseDto = ProductResponse.fromJson(jsonMap);
           favorites.add(responseDto.toDomain());
+        // ignore: empty_catches
         } catch (e) {}
       }
     }

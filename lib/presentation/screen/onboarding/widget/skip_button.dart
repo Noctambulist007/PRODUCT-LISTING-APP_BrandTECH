@@ -16,7 +16,7 @@ class SkipButton extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
           decoration: BoxDecoration(
-            color: t.surface.withOpacity(0.85),
+            color: t.surface.withValues(alpha: 0.85),
             borderRadius: BorderRadius.circular(20),
             border: Border.all(color: t.border),
           ),

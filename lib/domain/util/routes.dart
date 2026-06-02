@@ -41,10 +41,10 @@ abstract class AppRouter {
 
 PageRoute<T> _fadeSlide<T>(Widget page) {
   return PageRouteBuilder<T>(
-    pageBuilder: (_, animation, __) => page,
+    pageBuilder: (_, animation, _) => page,
     transitionDuration: const Duration(milliseconds: 400),
     reverseTransitionDuration: const Duration(milliseconds: 300),
-    transitionsBuilder: (_, animation, __, child) {
+    transitionsBuilder: (_, animation, _, child) {
       final curved = CurvedAnimation(
         parent: animation,
         curve: Curves.easeOutCubic,
@@ -66,7 +66,7 @@ PageRoute<T> _fadeSlide<T>(Widget page) {
 
 PageRoute<T> _sharedAxisX<T>(Widget page) {
   return PageRouteBuilder<T>(
-    pageBuilder: (_, animation, __) => page,
+    pageBuilder: (_, animation, _) => page,
     transitionDuration: const Duration(milliseconds: 420),
     reverseTransitionDuration: const Duration(milliseconds: 360),
     transitionsBuilder: (_, animation, secondaryAnimation, child) {

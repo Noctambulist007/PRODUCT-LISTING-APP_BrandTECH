@@ -72,7 +72,7 @@ class _RelatedCardState extends State<RelatedCard>
                     imageUrl: product.image,
                     fit: BoxFit.contain,
                     width: double.infinity,
-                    placeholder: (_, __) => Center(
+                    placeholder: (_, _) => Center(
                       child: SizedBox(
                         width: 16,
                         height: 16,

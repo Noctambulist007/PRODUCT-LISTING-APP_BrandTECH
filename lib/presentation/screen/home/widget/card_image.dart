@@ -26,8 +26,8 @@ class CardImage extends StatelessWidget {
                 fit: BoxFit.contain,
                 width: 130,
                 height: double.infinity,
-                placeholder: (_, __) => ImagePlaceholder(t: t),
-                errorWidget: (_, __, ___) => ImageError(t: t),
+                placeholder: (_, _) => ImagePlaceholder(t: t),
+                errorWidget: (_, _, _) => ImageError(t: t),
               ),
             ),
             Positioned(
@@ -41,7 +41,7 @@ class CardImage extends StatelessWidget {
                     begin: Alignment.bottomCenter,
                     end: Alignment.topCenter,
                     colors: [
-                      Colors.black.withOpacity(0.55),
+                      Colors.black.withValues(alpha: 0.55),
                       Colors.transparent,
                     ],
                   ),
@@ -52,9 +52,9 @@ class CardImage extends StatelessWidget {
                     vertical: 3,
                   ),
                   decoration: BoxDecoration(
-                    color: t.accentSurface.withOpacity(0.92),
+                    color: t.accentSurface.withValues(alpha: 0.92),
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: t.accentLight.withOpacity(0.5)),
+                    border: Border.all(color: t.accentLight.withValues(alpha: 0.5)),
                   ),
                   child: Text(
                     product.category,

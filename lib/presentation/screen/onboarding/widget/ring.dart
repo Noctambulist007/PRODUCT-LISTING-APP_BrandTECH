@@ -19,7 +19,7 @@ class Ring extends StatelessWidget {
       height: size,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        border: Border.all(color: color.withOpacity(opacity), width: 1.5),
+        border: Border.all(color: color.withValues(alpha: opacity), width: 1.5),
       ),
     );
   }
